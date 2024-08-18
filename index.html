@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+    <title>Sanjay Khosla Portfolio</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #009688;
+        color: #fff;
+        transition: background-color 0.5s ease;
+      }
+
+      header {
+        padding: 40px 20px;
+        text-align: center;
+        background: linear-gradient(to bottom right, #2c3e50, #3498db);
+        color: #fff;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 3em;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      header p {
+        font-size: 1.2em;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #444;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      nav li {
+        margin: 0 15px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1em;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #009688;
+        color: #000;
+      }
+
+      .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .section-title {
+        text-align: center;
+        margin: 40px 0 20px;
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .profile,
+      .projects,
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .about-me {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin: 40px 0;
+        text-align: center;
+      }
+
+      /* .about-me .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .about-me .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      } */
+
+      .about-me .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .about-me .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+      .about-me .description {
+        max-width: 600px;
+      }
+
+      .about-me .description h2 {
+        margin: 0;
+        font-size: 2em;
+        color: #fff;
+      }
+
+      .about-me .description p {
+        margin: 10px 0;
+        font-size: 1.1em;
+        color: #fff;
+      }
+
+      .skills {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill {
+        background-color: #444;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .project {
+        background-color: #fff;
+        color: #333;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-title {
+        margin: 0 0 10px;
+        font-size: 1.5em;
+        color: #009688;
+      }
+
+      .project-body {
+        flex-grow: 1;
+      }
+
+      .project-footer {
+        margin-top: 15px;
+        font-style: italic;
+        color: #666;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 1em;
+      }
+
+      .contact {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contact .icon {
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.contact .icon.github {
+    color: #333; /* GitHub color */
+}
+
+.contact .icon.github:hover {
+    color: #6e5494; /* GitHub hover color */
+}
+/* LinkedIn Icon */
+.contact .icon.linkedin {
+    color: #0077B5; /* LinkedIn color */
+}
+
+.contact .icon.linkedin:hover {
+    color: #005983; /* Darker LinkedIn color on hover */
+}
+
+/* Gmail Icon */
+.contact .icon.gmail {
+    color: #D44638; /* Gmail color */
+}
+
+.contact .icon.gmail:hover {
+    color: #B23121; /* Darker Gmail color on hover */
+}
+
+
+.contact .icon:hover {
+    filter: brightness(1.2); /* Slightly brightens the icon on hover */
+}
+
+/* Style for the 'Made with love' text */
+.made-with-love {
+    font-size: 16px;
+    color: #ff4757; /* A red shade to match the heart emoji */
+    font-weight: bold;
+}
+
+/* Style for the 'Sanjay Khosla' text in cursive */
+.signature {
+    font-family: 'Pacifico', cursive; /* Example of a stylish cursive font */
+    font-size: 20px;
+    color: #fff; /* Darker color for contrast */
+    margin-left: 10px;
+}
+
+
+/* Example styles for spacing and alignment */
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        color: #fff;
+        font-size: 1.5em;
+        text-decoration: none;
+      }
+
+      .social-links i {
+        display: block;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover i {
+        color: #009688;
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2em;
+        }
+
+        .section-title {
+          font-size: 1.5em;
+        }
+
+        .profile .info,
+        .projects .project,
+        .contact .contact-form {
+          min-width: 80%;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        nav li {
+          margin: 5px 0;
+        }
+
+        .project {
+          min-width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .about-me .avatar {
+          width: 120px;
+          height: 120px;
+        }
+
+        .about-me .description h2 {
+          font-size: 1.5em;
+        }
+
+        .about-me .description p {
+          font-size: 1em;
+        }
+
+        .project-title {
+          font-size: 1.2em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Sanjay Khosla</h1>
+      <p>Frontend Developer with expertise in React and Flutter</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <section id="profile">
+        <h2 class="section-title">Profile</h2>
+        <div class="about-me">
+          <div class="avatar">
+            <!-- <img src="https://drive.google.com/file/d/1J8auHF9UBeSzNLyGbhv0gyszYJRbCk8P/view?usp=drivesdk" alt="Sanjay Khosla" /> -->
+            <img src="https://i.imgur.com/Dz4Xocb.jpeg" alt="Sanjay Khosla" />
+          </div>
+          <div class="description">
+            <h2>About Me</h2>
+            <p>
+              Hi :) 👋 I'm Sanjay a responsible developer working on real-time
+              projects. :) currently working with awesome folks at Lotus
+              Wireless Technologies. . Thank you 💜
+            </p>
+          </div>
+        </div>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills">
+          <div class="skill">React.js</div>
+          <div class="skill">Flutter</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">CSS3</div>
+          <div class="skill">HTML5</div>
+          <div class="skill">Redux</div>
+          <div class="skill">Git</div>
+          <div class="skill">RESTful APIs</div>
+          <div class="skill">Bootstrap 5</div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">
+          <div class="project">
+            <h3 class="project-title">HRMS Mobile App</h3>
+            <div class="project-body">
+              <p>Designed user-friendly interfaces and implemented key functionalities for an HRMS app, enhancing employee onboarding, attendance tracking, leave management, and data organization.</p>
+            </div>
+            <div class="project-footer">
+              <p>Technologies used: Flutter (3.2.x), BLoC and Cubit</p>
+            </div>
+          </div>
+          <div class="project">
+            <h3 class="project-title">Flood Warning System</h3>
+            <div class="project-body">
+              <p>I managed all functionalities of the Flood Warning System app, collaborating with cross-platform teams and implementing client requirements for real-time data processing, timely alerts, historical records, live updates, and equipment status for effective flood monitoring and safety.</p>
+            </div>
+            <div class="project-footer">
+              <p>Technologies used: React JS, Redux, Bootstrap 5, SCSS, react-chartjs-2, GeoJSON</p>
+            </div>
+          </div>
+          <div class="project">
+            <h3 class="project-title">Mr Moasilha</h3>
+            <div class="project-body">
+              <p>I have designed user interfaces for the Mr. Moasilha web application, enabling seamless pickup and delivery of items, online food ordering, and grocery services, similar to Swiggy and Dunzo apps.</p>
+            </div>
+            <div class="project-footer">
+              <p>Technologies used: React JS (v-17x), Redux, redux-thunk, Antd, Bootstrap 5, SCSS, Java (Backend), MySQL (DB)</p>
+            </div>
+          </div>
+        </div>
+      </section> 
+
+      <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact">
+          
+          <a href="https://www.linkedin.com/in/sanjay-khosla-004972170/" target="_blank" class="icon linkedin">
+            <i class="fab fa-linkedin"></i>
+        </a>
+       
+        
+            <a href="https://github.com/goodboykumar/" target="_blank" class="icon github">
+              <i class="fab fa-github"></i>
+          </a>
+          
+          <a href="mailto:sanjaykhosla33@gmail.com" target="_blank" class="icon gmail">
+            <i class="fas fa-envelope"></i>
+        </a>
+        </div>
+    </section>
+    
+    </div>
+
+    <footer>
+      <marquee behavior="scroll" direction="left">
+          <span class="made-with-love">Made with ❤️ in India</span> | 
+          <span class="signature">@2024 Sanjay Khosla</span>
+      </marquee>
+    
+  </footer>
+  
+  </body>
+</html>
